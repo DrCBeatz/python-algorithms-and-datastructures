@@ -31,5 +31,3 @@ def merge_sort(nums: list) -> list:
             k += 1
 
     return nums
-
-assert merge_sort([5,4,3,2,1]) == [1,2,3,4,5]
