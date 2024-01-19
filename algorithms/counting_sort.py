@@ -1,6 +1,6 @@
 # counting_sort.py
 
-def counting_sort(nums):
+def counting_sort(nums: list) -> list:
   max_val = max(nums)
   count = [0] * (max_val + 1)
   output = [0] * len(nums)
