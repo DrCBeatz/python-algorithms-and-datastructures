@@ -1,21 +1,24 @@
 # bfs_binary_tree.py
 
 from collections import deque
+from typing import List, Optional
 
-class TreeNode():
-    def __init__(self, value):
+class TreeNode:
+    def __init__(self, value: int):
         self.value = value
-        self.left = None
-        self.right = None
+        self.left = Optional[TreeNode]
+        self.right = Optional[TreeNode]
 
 
-def bfs(root):
-    visited = []
-    queue = deque([root])
+def bfs(root: Optional[TreeNode]) -> List[int]:
+    if root is None:
+        return []
+    
+    visited: List[int] = []
+    queue: deque[TreeNode] = deque([root])
 
     while queue:
         node = queue.popleft()
-
         visited.append(node.value)
 
         if node.left:
@@ -34,8 +37,8 @@ def main():
     root.left.left = TreeNode(4)
     root.left.right = TreeNode(5)
 
-    # Perform DFS
-    print(bfs(root))
+    # Perform BFS
+    print(bfs(roott))
 
 if __name__ == "__main__":
     main()
