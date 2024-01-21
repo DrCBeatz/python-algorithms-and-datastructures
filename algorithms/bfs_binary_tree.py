@@ -38,7 +38,7 @@ def main():
     root.left.right = TreeNode(5)
 
     # Perform BFS
-    print(bfs(roott))
+    print(bfs(root))
 
 if __name__ == "__main__":
     main()
