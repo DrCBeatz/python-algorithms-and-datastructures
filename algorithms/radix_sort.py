@@ -1,6 +1,8 @@
 # radix_sort.py
 
-def counting_sort(nums, digit_place):
+from typing import List
+
+def counting_sort(nums: List[int], digit_place: int) -> List[int]:
   count = [0] * 10
   output = [0] * len(nums)
 
@@ -18,7 +20,7 @@ def counting_sort(nums, digit_place):
       
   return output
   
-def radix_sort(nums):
+def radix_sort(nums: List[int]) -> List[int]:
   max_val = max(nums)
   digit_place = 1
     
