@@ -1,6 +1,8 @@
 # selection_sort.py
 
-def selection_sort(nums: list) -> list:
+from typing import List
+
+def selection_sort(nums: List[int]) -> List[int]:
     for i in range(len(nums) - 1):
         min_index = i
         for j in range(i + 1, len(nums)):

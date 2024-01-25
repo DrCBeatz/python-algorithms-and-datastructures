@@ -1,6 +1,8 @@
 # shell_sort.py
 
-def shell_sort(nums: list) -> list:
+from typing import List
+
+def shell_sort(nums: List[int]) -> List[int]:
     length = len(nums)
     gap = length // 2
     while gap > 0:

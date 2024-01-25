@@ -1,6 +1,8 @@
 # insertion_sort.py
 
-def insertion_sort(nums: list) -> list:
+from typing import List
+
+def insertion_sort(nums: List[int]) -> List[int]:
     for i in range(1, len(nums)):
         key = nums[i]
         j = i - 1

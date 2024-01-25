@@ -1,8 +1,9 @@
 # bucket_sort.py
 
+from typing import List
 from collections import Counter
 
-def bucket_sort(nums: list) -> list:
+def bucket_sort(nums: List[int]) -> List[int]:
     counter = Counter(nums)
     sorted_array = []
 

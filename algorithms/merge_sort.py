@@ -1,6 +1,8 @@
 # merge_sort.py
 
-def merge_sort(nums: list) -> list:
+from typing import List
+
+def merge_sort(nums: List[int]) -> List[int]:
     if len(nums) > 1:
         mid = len(nums) // 2
         L = nums[:mid]
