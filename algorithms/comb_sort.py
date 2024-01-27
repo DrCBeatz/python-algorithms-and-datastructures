@@ -1,13 +1,15 @@
 # comb_sort.py
 
-def next_gap(gap):
+from typing import List
+
+def next_gap(gap: int) -> int:
     # Shrink gap by Shrink factor
     gap = (gap * 10) // 13
     if gap < 1:
         return 1
     return gap
 
-def comb_sort(nums):
+def comb_sort(nums: List[int]) -> List[int]:
     length = len(nums)
     gap = length
     swapped = True
