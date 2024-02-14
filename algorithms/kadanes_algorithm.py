@@ -1,8 +1,9 @@
 # kadanes_algorithm.py
+from typing import List
 
-def kadanes(nums):
-  max_sum = nums[0]
-  cur_sum = 0
+def kadanes(nums: List[int]) -> int:
+  max_sum: int = nums[0]
+  cur_sum: int  = 0
 
   for n in nums:
     cur_sum = max(cur_sum, 0)
