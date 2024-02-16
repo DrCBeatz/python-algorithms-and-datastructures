@@ -1,37 +1,41 @@
 # test_bubble_sort.py
 
+import pytest
 from ..bubble_sort import bubble_sort
 
-import pytest
+@pytest.mark.parametrize(
+    "input_list, expected_output",
+    [
+        # Test 1: Normal list
+        ([4, 3, 2, 1], [1, 2, 3, 4]),
+        # Test 2: List with duplicate elements
+        ([3, 2, 1, 2], [1, 2, 2, 3]),
+        # Test 3: List with negative numbers
+        ([-2, -1, -3, -4], [-4, -3, -2, -1]),
+        # Test 4: Single-element list
+        ([1], [1]),
+        # Test 5: Empty list
+        ([], []),
+        # Test 6: Already sorted list
+        ([1, 2, 3, 4], [1, 2, 3, 4]),
+        # Test 7: Reverse sorted list
+        ([4, 3, 2, 1], [1, 2, 3, 4]),
+    ],
+)
+def test_bubble_sort(input_list, expected_output):
+    assert bubble_sort(input_list) == expected_output
 
-def test_bubble_sort():
-    # Test 1: Normal list
-    assert bubble_sort([4, 3, 2, 1]) == [1, 2, 3, 4], "Should sort a list in ascending order"
-
-    # Test 2: List with duplicate elements
-    assert bubble_sort([3, 2, 1, 2]) == [1, 2, 2, 3], "Should handle duplicate elements"
-    
-    # Test 3: List with negative numbers
-    assert bubble_sort([-2, -1, -3, -4]) == [-4, -3, -2, -1], "Should handle negative numbers"    
-
-    # Test 4: Single-element list
-    assert bubble_sort([1]) == [1], "Should handle single-element list"
-    
-    # Test 5: Empty list
-    assert bubble_sort([]) == [], "Should handle empty list"
-    
-    # Test 6: Already sorted list
-    assert bubble_sort([1, 2, 3, 4]) == [1, 2, 3, 4], "Should handle already sorted list"
-    
-    # Test 7: Reverse sorted list
-    assert bubble_sort([4, 3, 2, 1]) == [1, 2, 3, 4], "Should handle reverse sorted list"
-    
-    # Error handling
+@pytest.mark.parametrize(
+    "input_list",
+    [
+        # Test 1: Non-list input (tuple)
+        (5, 4, 3, 2, 1),
+        # Test 2: Non-list input (string)
+        "This is not a list",
+        # Test 3: Non-list input (dictionary)
+        {5: 4, 3: 2, 1: 0},
+    ],
+)
+def test_bubble_sort_errors(input_list):
     with pytest.raises(TypeError):
-        bubble_sort(5, 4, 3, 2, 1)
-    
-    with pytest.raises(TypeError):
-        bubble_sort("This is not a list")
-
-    with pytest.raises(TypeError):
-        bubble_sort({5: 4, 3: 2, 1: 0})
+        bubble_sort(input_list)
