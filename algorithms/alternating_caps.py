@@ -1,4 +1,5 @@
 # alternating_caps.py
+# Recursive alternating caps function.
 
 def alternating_caps(s: str, upper: bool = True) -> str:
     if not s:
