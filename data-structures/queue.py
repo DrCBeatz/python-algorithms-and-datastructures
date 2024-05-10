@@ -29,8 +29,6 @@ class Queue():
         if self.is_empty():
             raise EmptyQueueError("Queue is empty")
         return self.queue[0]
-        
-
-s
+    
 
 
